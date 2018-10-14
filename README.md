@@ -27,7 +27,7 @@ MEAL PLANNING - What are the advantages?
 * JS ES6
 * React
 * Redux
-* Testing: jest, enzyme
+* Testing: Jest
 
 ## How to use
 
