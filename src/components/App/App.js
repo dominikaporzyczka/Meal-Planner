@@ -5,8 +5,8 @@ import './App.css';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { MainPage } from '../MainPage/MainPage';
-import { Planner } from '../Planner/Planner';
-import { MealPage } from '../MealPage/MealPage';
+import { PlannerPage } from '../PlannerPage/PlannerPage';
+import { RecipePage } from '../RecipePage/RecipePage';
 import { NotFound } from '../NotFound/NotFound';
 
 class App extends Component {
@@ -16,8 +16,8 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path='/' component={MainPage} />
-          <Route exact path='/planner' component={Planner} />
-          <Route exact path='/meals/:meal' component={MealPage} />
+          <Route exact path='/planner' component={PlannerPage} />
+          <Route exact path='/recipes/:recipe' component={RecipePage} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

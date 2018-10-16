@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Planner } from './Planner.js';
+import { PlannerPage } from './PlannerPage.js';
 
-describe('Planner', () => {
+describe('PlannerPage', () => {
   it('should match snapshot', () => {
     const planner = renderer
-      .create(<Planner />)
+      .create(<PlannerPage />)
       .toJSON();
 
     expect(planner).toMatchSnapshot();
