@@ -2,6 +2,32 @@
 
 exports[`Header should match snapshot 1`] = `
 <div>
-  Header
+  <nav>
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Logo
+    </a>
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Recipes
+    </a>
+    <a
+      aria-current={null}
+      href="/planner"
+      onClick={[Function]}
+    >
+      Planner
+    </a>
+  </nav>
 </div>
 `;
