@@ -7,6 +7,7 @@ import { Footer } from '../Footer/Footer';
 import { MainPage } from '../MainPage/MainPage';
 import { PlannerPage } from '../PlannerPage/PlannerPage';
 import { RecipePage } from '../RecipePage/RecipePage';
+import { RecipesPage } from '../RecipesPage/RecipesPage';
 import { NotFound } from '../NotFound/NotFound';
 
 class App extends Component {
@@ -16,8 +17,9 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path='/' component={MainPage} />
-          <Route exact path='/planner' component={PlannerPage} />
-          <Route exact path='/recipes/:recipe' component={RecipePage} />
+          <Route path='/planner' component={PlannerPage} />
+          <Route exact path='/recipes' component={RecipesPage} />
+          <Route path='/recipes/:recipe' component={RecipePage} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
