@@ -4,11 +4,11 @@ import './App.css';
 
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
-import { MainPage } from '../MainPage/MainPage';
-import { PlannerPage } from '../PlannerPage/PlannerPage';
-import { RecipePage } from '../RecipePage/RecipePage';
-import { RecipesPage } from '../RecipesPage/RecipesPage';
-import { NotFound } from '../NotFound/NotFound';
+import { MainPage } from '../pages/MainPage/MainPage';
+import { PlannerPage } from '../pages/PlannerPage/PlannerPage';
+import { RecipePage } from '../pages/RecipePage/RecipePage';
+import { RecipesPage } from '../pages/RecipesPage/RecipesPage';
+import { NotFound } from '../pages/NotFound/NotFound';
 
 class App extends Component {
   render() {
