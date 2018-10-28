@@ -1,10 +1,10 @@
 export const recipesReducer = (state = [], action) => {
   switch (action.type) {
-    case 'DISPLAY_RECIPES':
+    case 'ADD_RECIPE':
       return [
         ...state,
         {
-          ...action.recipes
+          ...action.recipe
         }
       ];
     default:
