@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as recipesAcion from '../../actions/recipesActions';
 
-export class AddRecipe extends Component {
+class AddRecipe extends Component {
   constructor(props) {
     super(props);
 
@@ -18,8 +21,7 @@ export class AddRecipe extends Component {
   }
 
   clickHandler = (e) => {
-    alert(`${this.state.recipe.name} added`);
-    e.preventDefault();
+    this.props.dispatch(recipesAcion.addRecipe(this.state.recipes));
   }
 
   render() {
@@ -40,4 +42,16 @@ export class AddRecipe extends Component {
       </div>
     );
   }
+};
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    recipes: state.recipes
+  };
+};
+
+export default connect(mapStateToProps)(AddRecipe);
+
+AddRecipe.propTypes = {
+  dispatch: PropTypes.func
 };
