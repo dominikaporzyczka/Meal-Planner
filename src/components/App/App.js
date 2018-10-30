@@ -8,6 +8,7 @@ import { MainPage } from '../pages/MainPage/MainPage';
 import { PlannerPage } from '../pages/PlannerPage/PlannerPage';
 import { RecipePage } from '../pages/RecipePage/RecipePage';
 import { RecipesPage } from '../pages/RecipesPage/RecipesPage';
+import AddRecipe from '../AddRecipe/AddRecipe';
 import { NotFound } from '../pages/NotFound/NotFound';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path='/' component={MainPage} />
           <Route path='/planner' component={PlannerPage} />
           <Route exact path='/recipes' component={RecipesPage} />
+          <Route path='/recipes/add' component={AddRecipe} />
           <Route path='/recipes/:recipe' component={RecipePage} />
           <Route component={NotFound} />
         </Switch>
