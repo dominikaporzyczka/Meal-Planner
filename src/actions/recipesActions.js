@@ -1,4 +1,3 @@
-export const addRecipe = recipe => ({
-  type: 'ADD_RECIPE',
-  recipe
-});
+export function addRecipe(recipe) {
+  return { type: 'ADD_RECIPE', recipe };
+};

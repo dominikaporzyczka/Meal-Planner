@@ -8,7 +8,7 @@ import { MainPage } from '../pages/MainPage/MainPage';
 import { PlannerPage } from '../pages/PlannerPage/PlannerPage';
 import { RecipePage } from '../pages/RecipePage/RecipePage';
 import { RecipesPage } from '../pages/RecipesPage/RecipesPage';
-import { AddRecipe } from '../AddRecipe/AddRecipe';
+import AddRecipe from '../AddRecipe/AddRecipe';
 import { NotFound } from '../pages/NotFound/NotFound';
 
 class App extends Component {

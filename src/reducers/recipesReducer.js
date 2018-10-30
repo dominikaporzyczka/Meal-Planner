@@ -3,10 +3,9 @@ export const recipesReducer = (state = [], action) => {
     case 'ADD_RECIPE':
       return [
         ...state,
-        {
-          ...action.recipe
-        }
+        Object.assign({}, action.recipe)
       ];
+
     default:
       return state;
   }

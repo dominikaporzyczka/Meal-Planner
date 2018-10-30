@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as recipesAcion from '../../actions/recipesActions';
+import { addRecipe } from '../../actions/recipesActions';
 
 class AddRecipe extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class AddRecipe extends Component {
 
     this.state = {
       recipe: {
-        name: null
+        name: ''
       }
     };
   }
@@ -21,13 +21,18 @@ class AddRecipe extends Component {
   }
 
   clickHandler = (e) => {
-    this.props.dispatch(recipesAcion.addRecipe(this.state.recipes));
+    this.props.addRecipe(this.state.recipe);
+  }
+
+  recipeRow(recipe, index) {
+    return <div key={index}>{recipe.name}</div>;
   }
 
   render() {
     return (
       <div>
         <h2>Add recipe</h2>
+        {this.props.recipes.map(this.recipeRow)}
         <input
           type="text"
           onChange={(event) => this.changeHandler(event.target.value)}
@@ -44,14 +49,17 @@ class AddRecipe extends Component {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    recipes: state.recipes
-  };
+const mapStateToProps = state => {
+  return { recipes: state.recipes };
 };
 
-export default connect(mapStateToProps)(AddRecipe);
+const mapDispatchToProps = dispatch => ({
+  addRecipe: (recipe) => dispatch(addRecipe(recipe))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddRecipe);
 
 AddRecipe.propTypes = {
-  dispatch: PropTypes.func
+  recipes: PropTypes.array.isRequired,
+  addRecipe: PropTypes.func
 };
