@@ -3,29 +3,35 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addRecipe } from '../../actions/recipesActions';
 
+import { InputText } from '../common/InputText';
+
 class AddRecipe extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      recipe: {
-        name: ''
-      }
+      name: '',
+      description: ''
     };
   }
 
-  changeHandler = (value) => {
+  handleInputChange = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+
     this.setState(prevState => (
-      { ...prevState, recipe: { name: value } }
+      { ...prevState, [name]: value }
     ));
   }
 
-  clickHandler = (e) => {
-    this.props.addRecipe(this.state.recipe);
+  handleSubmit = (e) => {
+    this.props.addRecipe(this.state);
+
+    e.preventDefault();
   }
 
   recipeRow(recipe, index) {
-    return <div key={index}>{recipe.name}</div>;
+    return <div key={index}>{recipe.name}, {recipe.description}</div>;
   }
 
   render() {
@@ -33,17 +39,23 @@ class AddRecipe extends Component {
       <div>
         <h2>Add recipe</h2>
         {this.props.recipes.map(this.recipeRow)}
-        <input
-          type="text"
-          onChange={(event) => this.changeHandler(event.target.value)}
-          value={this.state.recipe.name}
-        />
-        <button
-          type="submit"
-          onClick={this.clickHandler}
-        >
-          Add
-        </button>
+        <form onSubmit={this.handleSubmit}>
+          <InputText
+            label='Name'
+            id='recipe-name'
+            name='name'
+            value={this.state.name}
+            onChange={this.handleInputChange}
+          />
+          <InputText
+            label='Description'
+            id='recipe-description'
+            name='description'
+            value={this.state.description}
+            onChange={this.handleInputChange}
+          />
+          <button type="submit"> Add Recipe </button>
+        </form>
       </div>
     );
   }
