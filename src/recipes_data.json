@@ -3,72 +3,21 @@
     "id": "1",
     "name": "Soup",
     "categories": ["soupes", "wege"],
-    "recipe": {
-      "description": "Caramels wafer pudding. Sesame snaps tiramisu chupa chups halvah wafer cake. Gingerbread topping chocolate cake halvah jujubes candy. ",
-      "steps": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Duis et scelerisque est, vel consectetur lacus."
-      ]
-    },
-    "ingredients": [
-      {
-        "name": "pasta",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "name": "carrot",
-        "amount": "2",
-        "unit": "szt"
-      }
-    ]
+    "description": "Caramels wafer pudding. Sesame snaps tiramisu chupa chups halvah wafer cake. Gingerbread topping chocolate cake halvah jujubes candy. ",
+    "ingredients": []
   },
   {
     "id": "2",
     "name": "Pasta",
     "categories": ["pastas"],
-    "recipe": {
-      "description": "Caramels wafer pudding. Sesame snaps tiramisu chupa chups halvah wafer cake. Gingerbread topping chocolate cake halvah jujubes candy. ",
-      "steps": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Duis et scelerisque est, vel consectetur lacus."
-      ]
-    },
-    "ingredients": [
-      {
-        "name": "pasta",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "name": "carrot",
-        "amount": "2",
-        "unit": "szt"
-      }
-    ]
+    "description": "Caramels wafer pudding. Sesame snaps tiramisu chupa chups halvah wafer cake. Gingerbread topping chocolate cake halvah jujubes candy. ",
+    "ingredients": []
   },
   {
     "id": "3",
     "name": "Sauce",
     "categories": ["souces", "wege"],
-    "recipe": {
-      "description": "Caramels wafer pudding. Sesame snaps tiramisu chupa chups halvah wafer cake. Gingerbread topping chocolate cake halvah jujubes candy. ",
-      "steps": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Duis et scelerisque est, vel consectetur lacus."
-      ]
-    },
-    "ingredients": [
-      {
-        "name": "pasta",
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "name": "carrot",
-        "amount": "2",
-        "unit": "szt"
-      }
-    ]
+    "description": "Caramels wafer pudding. Sesame snaps tiramisu chupa chups halvah wafer cake. Gingerbread topping chocolate cake halvah jujubes candy. ",
+    "ingredients": []
   }
 ]
