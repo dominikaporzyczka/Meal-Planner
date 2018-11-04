@@ -14,7 +14,9 @@ class AddRecipe extends Component {
 
     this.state = {
       name: '',
-      description: ''
+      description: '',
+      ingredients: [],
+      categories: []
     };
   }
 
