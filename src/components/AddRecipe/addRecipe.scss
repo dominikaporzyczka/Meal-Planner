@@ -1,0 +1,41 @@
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-row {
+  margin: 20px 0;
+
+  input, textarea, select {
+    display: block;
+    margin-top: 10px;
+  }
+
+  input, select {
+    height: 30px;
+  }
+
+  input {
+    padding: 0 10px 0 10px;
+    width: 100%;
+  }
+
+  textarea {
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  select {
+    width: 100px;
+  }
+}
+
+.button-submit {
+  margin: 20px 0 40px 0;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #1abc9c;
+  border: none;
+  outline: none;
+}
