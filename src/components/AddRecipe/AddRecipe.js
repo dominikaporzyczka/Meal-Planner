@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addRecipe } from '../../actions/recipesActions';
 
-import { InputText } from '../common/InputText';
+import './addRecipe.css';
+
+import { categories } from '../../categories-data';
+import { ingredients } from '../../ingredients-data';
+import { addRecipe } from '../../actions/recipesActions';
 
 class AddRecipe extends Component {
   constructor(props) {
@@ -40,21 +43,43 @@ class AddRecipe extends Component {
         <h2>Add recipe</h2>
         {this.props.recipes.map(this.recipeRow)}
         <form onSubmit={this.handleSubmit}>
-          <InputText
-            label='Name'
-            id='recipe-name'
-            name='name'
-            value={this.state.name}
-            onChange={this.handleInputChange}
-          />
-          <InputText
-            label='Description'
-            id='recipe-description'
-            name='description'
-            value={this.state.description}
-            onChange={this.handleInputChange}
-          />
-          <button type="submit"> Add Recipe </button>
+          <div className='form-row'>
+            <label htmlFor='recipe-name'>Name</label>
+            <input
+              type='text'
+              id='recipe-name'
+              name='name'
+              value={this.state.name}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div className='form-row'>
+            <label htmlFor='recipe-categories'>Categories</label>
+            <select>
+              {categories.map((category, index) => {
+                return <option value={category} key={index}>{category}</option>;
+              })}
+            </select>
+          </div>
+          <div className='form-row'>
+            <label htmlFor='recipe-description'>Recipe</label>
+            <textarea
+              id='recipe-description'
+              name='description'
+              value={this.state.description}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div className='form-row'>
+            <label htmlFor='recipe-ingredients'>Ingredients</label>
+            <select>
+              {ingredients.map((ingredient, index) => {
+                const name = ingredient.ingredient.name;
+                return <option value={name} key={index}>{name}</option>;
+              })}
+            </select>
+          </div>
+          <button className='button-submit' type="submit"> Add Recipe </button>
         </form>
       </div>
     );
