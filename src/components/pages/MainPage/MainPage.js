@@ -6,7 +6,7 @@ export class MainPage extends Component {
     return (
       <div>
         <h2>MainPage</h2>
-        <Link to='/diagram'>Fit Diagram</Link>
+        <Link to='/diagram' className='btn-default btn-link' >Fit Diagram</Link>
       </div>
     );
   }

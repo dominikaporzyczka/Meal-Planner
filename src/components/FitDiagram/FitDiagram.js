@@ -3,6 +3,7 @@ import { GojsDiagram } from 'react-gojs';
 import * as go from 'gojs';
 
 import './fitDiagram.scss';
+import '../../styles/common.scss';
 
 export class FitDiagram extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ export class FitDiagram extends Component {
   render() {
     return [
       <button
-        className='btn-default'
+        className='btn-default btn-diagram'
         key='initDiagram'
         onClick={this.initModel}
       >

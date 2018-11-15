@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './addRecipe.scss';
+import '../../styles/common.scss';
 
 import { categories } from '../../categories-data';
 import { ingredients } from '../../ingredients-data';
@@ -81,7 +82,7 @@ class AddRecipe extends Component {
               })}
             </select>
           </div>
-          <button className='button-submit' type="submit"> Add Recipe </button>
+          <button className='btn-submit btn-default' type="submit"> Add Recipe </button>
         </form>
       </div>
     );
