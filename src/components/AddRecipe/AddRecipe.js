@@ -60,7 +60,7 @@ class AddRecipe extends Component {
             <label htmlFor='recipe-categories'>Categories</label>
             <select>
               {categories.map((category, index) => {
-                return <option value={category} key={index}>{category}</option>;
+                return <option value={category.value} key={category.key}>{category.value}</option>;
               })}
             </select>
           </div>
