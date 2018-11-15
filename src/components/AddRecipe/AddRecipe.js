@@ -8,6 +8,7 @@ import '../../styles/common.scss';
 import { categories } from '../../categories-data';
 import { ingredients } from '../../ingredients-data';
 import { addRecipe } from '../../actions/recipesActions';
+import { Dropdown } from '../Dropdown/Dropdown';
 
 class AddRecipe extends Component {
   constructor(props) {
@@ -19,6 +20,10 @@ class AddRecipe extends Component {
       ingredients: [],
       categories: []
     };
+  }
+
+  get categoriesValue() {
+    return categories.map(category => category.value).sort();
   }
 
   handleInputChange = (event) => {
@@ -57,12 +62,7 @@ class AddRecipe extends Component {
             />
           </div>
           <div className='form-row'>
-            <label htmlFor='recipe-categories'>Categories</label>
-            <select>
-              {categories.map((category, index) => {
-                return <option value={category.value} key={category.key}>{category.value}</option>;
-              })}
-            </select>
+            <Dropdown options={this.categoriesValue} label='categories'/>
           </div>
           <div className='form-row'>
             <label htmlFor='recipe-description'>Recipe</label>

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './inputText.css';
-
 export class InputText extends Component {
   render() {
     return (
-      <div className="input-row">
+      <React.Fragment>
         <label htmlFor={this.props.id}>{this.props.label}</label>
         <input
           type='text'
@@ -15,7 +13,7 @@ export class InputText extends Component {
           value={this.props.value}
           onChange={this.props.onChange}
         />
-      </div>
+      </React.Fragment>
     );
   }
 };
