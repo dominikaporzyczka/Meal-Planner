@@ -10,6 +10,7 @@ import { RecipePage } from '../pages/RecipePage/RecipePage';
 import { RecipesPage } from '../pages/RecipesPage/RecipesPage';
 import AddRecipe from '../AddRecipe/AddRecipe';
 import { NotFound } from '../pages/NotFound/NotFound';
+import { FitDiagram } from '../FitDiagram/FitDiagram';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path='/recipes' component={RecipesPage} />
           <Route path='/recipes/add' component={AddRecipe} />
           <Route path='/recipes/:recipe' component={RecipePage} />
+          <Route path='/diagram'component={FitDiagram} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
