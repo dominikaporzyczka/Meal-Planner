@@ -5,7 +5,6 @@
 }
 
 .dropdown-options {
-  display: none;
   position: absolute;
   margin: 0;
   padding: 0;
@@ -26,8 +25,4 @@
   li:hover {
     background-color: $primary-color;
   }
-}
-
-.dropdown-search:focus + .dropdown-options {
-  display: block;
 }

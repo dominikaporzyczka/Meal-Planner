@@ -9,7 +9,8 @@ export class Dropdown extends Component {
 
     this.state = {
       query: '',
-      options: this.props.options
+      options: this.props.options,
+      isEnabled: false
     };
   }
 
@@ -19,7 +20,7 @@ export class Dropdown extends Component {
     this.setState(prevState => ({
       ...prevState,
       query: value
-    }), function() {
+    }), function () {
       this.filterOptions();
     });
   }
@@ -43,6 +44,30 @@ export class Dropdown extends Component {
     }));
   }
 
+  handleInputFocus = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      isEnabled: true
+    }));
+  }
+
+  handleInputBlur = () => {
+    setTimeout(() => {
+      this.setState(prevState => ({
+        ...prevState,
+        isEnabled: false
+      }));
+    }, 1000);
+  }
+
+  get options() {
+    const options = this.state.options.map((option, index) =>
+      <li key={`${option}-${index}`} onClick={() => console.log(`d ${option}`)}>{option}</li>
+    );
+
+    return options;
+  }
+
   render() {
     return (
       <div className='dropdown'>
@@ -52,12 +77,14 @@ export class Dropdown extends Component {
           placeholder={`Select ${this.props.label}`}
           value={this.state.query}
           onChange={this.handleInputChange}
+          onFocus={this.handleInputFocus}
+          onBlur={this.handleInputBlur}
         />
-        <ul className='dropdown-options'>
-          {this.state.options.map((option, index) => (
-            <li key={`${option}-${index}`}>{option}</li>
-          ))}
-        </ul>
+        {this.state.isEnabled &&
+          <ul className='dropdown-options'>
+            {this.options}
+          </ul>
+        }
       </div>
     );
   }
@@ -65,5 +92,6 @@ export class Dropdown extends Component {
 
 Dropdown.propTypes = {
   options: PropTypes.array.isRequired,
-  label: PropTypes.string
+  label: PropTypes.string,
+  onSelectCategory: PropTypes.func.isRequired
 };

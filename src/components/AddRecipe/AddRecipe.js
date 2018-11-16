@@ -45,6 +45,14 @@ class AddRecipe extends Component {
     return <div key={index}>{recipe.name}, {recipe.description}</div>;
   }
 
+  onSelectCategory = (category) => {
+    console.log('click');
+    this.setState(prevState => ({
+      ...prevState,
+      categories: [...prevState.categories, category]
+    }));
+  }
+
   render() {
     return (
       <div>
@@ -62,8 +70,9 @@ class AddRecipe extends Component {
             />
           </div>
           <div className='form-row'>
-            <Dropdown options={this.categoriesValue} label='categories'/>
+            <Dropdown options={this.categoriesValue} label='categories' onSelectCategory={this.onSelectCategory}/>
           </div>
+          <div>{this.state.categories}</div>
           <div className='form-row'>
             <label htmlFor='recipe-description'>Recipe</label>
             <textarea
