@@ -5,12 +5,10 @@ import './App.css';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { MainPage } from '../pages/MainPage/MainPage';
-import { PlannerPage } from '../pages/PlannerPage/PlannerPage';
-import { RecipePage } from '../pages/RecipePage/RecipePage';
-import { RecipesPage } from '../pages/RecipesPage/RecipesPage';
-import AddRecipe from '../AddRecipe/AddRecipe';
+import { MyActivitiesPage } from '../pages/MyActivitiesPage/MyActivitiesPage';
+import { ProgressReportPage } from '../pages/ProgressReportPage/ProgressReportPage';
+import { MyGoalsPage } from '../pages/MyGoalsPage/MyGoalsPage';
 import { NotFound } from '../pages/NotFound/NotFound';
-import { FitDiagram } from '../FitDiagram/FitDiagram';
 
 class App extends Component {
   render() {
@@ -19,11 +17,9 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path='/' component={MainPage} />
-          <Route path='/planner' component={PlannerPage} />
-          <Route exact path='/recipes' component={RecipesPage} />
-          <Route path='/recipes/add' component={AddRecipe} />
-          <Route path='/recipes/:recipe' component={RecipePage} />
-          <Route path='/diagram'component={FitDiagram} />
+          <Route path='/activities' component={MyActivitiesPage} />
+          <Route exact path='/reports' component={ProgressReportPage} />
+          <Route exact path='/goals' component={MyGoalsPage} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

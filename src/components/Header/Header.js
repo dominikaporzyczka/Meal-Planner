@@ -8,8 +8,9 @@ export class Header extends Component {
     return (
       <nav>
         <NavLink to='/' className="nav-link">Logo</NavLink>
-        <NavLink to='/recipes' className="nav-link">Recipes</NavLink>
-        <NavLink to='/planner' className="nav-link">Your Meal Planner</NavLink>
+        <NavLink to='/activities' className="nav-link">My Activities</NavLink>
+        <NavLink to='/goals' className="nav-link">My Goals</NavLink>
+        <NavLink to='/reports' className="nav-link">Progress Reports</NavLink>
       </nav>
     );
   }
